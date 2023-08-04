@@ -4,6 +4,7 @@ const OpenAiInquiryController = require("./controllers/OpenAiInquiryController")
 const extractArticleMiddleware = require("./middlewares/extractArticleMiddleware");
 const OpenAiPromptController = require("./controllers/OpenAiPromptController");
 const path = require("path");
+const YahooFinanceController = require("./controllers/YahooFinanceController");
 
 const app = express();
 
@@ -15,6 +16,11 @@ app.post(
   extractArticleMiddleware,
   OpenAiInquiryController.SummarizeOpenAi
 );
+
+// app.post("/historical", YahooFinanceController.HistoricalData);
+app.post("/historical", (req, res) => {
+  console.log("req.body", req);
+});
 
 app.use(OpenAiPromptController.PromptLine);
 
