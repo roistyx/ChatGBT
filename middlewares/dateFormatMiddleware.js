@@ -1,12 +1,35 @@
+// dateValidatorMiddleware.js
 
-const datesValidationMiddleware = (req, res, next) => {
-    const { startDate, endDate } = req.body;
-    console.log("Middleware",req.body);
-    // const start = new Date(startDate);
-    // const end = new Date(endDate);
-    // const datesRange = [start, end];
-    // req.datesRange = datesRange;
-    next();
-    }
+// This middleware validates and formats the date properties
+function dateValidatorMiddleware(req, res, next) {
+  const {
+    searchQuery,
+    startMonth,
+    startDate,
+    startYear,
+    endMonth,
+    endDate,
+    endYear,
+  } = req.body;
 
-module.exports = datesValidationMiddleware;
+  // Function to format date strings as "YYYY-MM-DD"
+  function formatDate(year, month, day) {
+    return `${year.toString().padStart(4, "0")}-${month
+      .toString()
+      .padStart(2, "0")}-${day.toString().padStart(2, "0")}`;
+  }
+
+  // Constructing the new object with formatted date strings
+  const formattedObj = {
+    symbol: searchQuery,
+    startDate: formatDate(startYear, startMonth, startDate),
+    endDate: formatDate(endYear, endMonth, endDate),
+  };
+
+  // Adding the formatted object to the request for further processing in the route handler
+  req.formattedObj = formattedObj;
+
+  next();
+}
+
+module.exports = dateValidatorMiddleware;

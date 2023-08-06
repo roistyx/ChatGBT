@@ -7,7 +7,7 @@ const extractArticleMiddleware = require("./middlewares/extractArticleMiddleware
 const OpenAiPromptController = require("./controllers/OpenAiPromptController");
 const path = require("path");
 const YahooFinanceController = require("./controllers/YahooFinanceController");
-const datesValidationMiddleware = require("./middlewares/dateFormatMiddleware");
+const dateValidatorMiddleware = require("./middlewares/dateFormatMiddleware");
 
 const app = express();
 app.use(
@@ -26,7 +26,11 @@ app.post(
   OpenAiInquiryController.SummarizeOpenAi
 );
 
-app.post("/historical", datesValidationMiddleware, YahooFinanceController.HistoricalData);
+app.post(
+  "/historical",
+  dateValidatorMiddleware,
+  YahooFinanceController.HistoricalData
+);
 
 // app.use(OpenAiPromptController.PromptLine);
 
