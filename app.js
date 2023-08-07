@@ -1,12 +1,12 @@
 require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
-
 const OpenAiInquiryController = require("./controllers/OpenAiInquiryController");
 const extractArticleMiddleware = require("./middlewares/extractArticleMiddleware");
 const OpenAiPromptController = require("./controllers/OpenAiPromptController");
 const path = require("path");
 const YahooFinanceController = require("./controllers/YahooFinanceController");
+const GoogleFinanceController = require("./controllers/GoogleFinanceController");
 const dateValidatorMiddleware = require("./middlewares/dateFormatMiddleware");
 
 const app = express();
@@ -25,6 +25,8 @@ app.post(
   extractArticleMiddleware,
   OpenAiInquiryController.SummarizeOpenAi
 );
+
+app.get("/stock-news/:symbol", GoogleFinanceController.getNews);
 
 app.post(
   "/historical",
