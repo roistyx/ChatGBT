@@ -15,10 +15,6 @@ class GoogleFinanceController {
         const data = response.data;
 
         const feed = data.feed.slice(0, 10);
-        const summaryArray = data.feed.forEach((item) => {
-          summaryArray.push(item.summary);
-        });
-        console.log("summaryArray", summaryArray);
 
         res.status(200).json({ feed: feed });
       })
