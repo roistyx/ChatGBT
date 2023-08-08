@@ -7,13 +7,20 @@ class GoogleFinanceController {
 
     const API_KEY = process.env.GOOGLE_API_KEY;
 
-    const apiUrl = `https://www.alphavantage.co/query?function=NEWS_SENTIMENT&sort=LATEST&limit=10&tickers=${symbol}&apikey=${API_KEY}}`;
+    const apiUrl = `https://www.alphavantage.co/query?function=NEWS_SENTIMENT&sort=LATEST&tickers=${symbol}&apikey=${API_KEY}}`;
 
     axios
       .get(apiUrl)
       .then((response) => {
         const data = response.data;
-        res.status(200).json(data);
+
+        const feed = data.feed.slice(0, 10);
+        const summaryArray = data.feed.forEach((item) => {
+          summaryArray.push(item.summary);
+        });
+        console.log("summaryArray", summaryArray);
+
+        res.status(200).json({ feed: feed });
       })
       .catch((error) => {
         if (error.response) {
