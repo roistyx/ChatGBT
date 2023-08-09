@@ -12,7 +12,8 @@
     "openai": "^3.3.0",
     "path": "^0.12.7",
     "readline": "^1.3.0",
-    "yahoo-finance": "^0.3.8"
+    "yahoo-finance": "^0.3.8",
+    "yahoo-finance2": "^2.4.3"
   },
   "name": "my-jimp-app",
   "version": "1.0.0",
