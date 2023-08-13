@@ -24,8 +24,8 @@ app.use(express.static("public"));
 
 app.post(
   "/extract",
-  extractArticleMiddleware
-  // OpenAiExtractController.ExtractOpenAi
+  extractArticleMiddleware,
+  OpenAiExtractController.ExtractOpenAi
 );
 
 app.get("/stock-news/:symbol", GoogleFinanceController.getNews);

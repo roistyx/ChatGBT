@@ -1,7 +1,7 @@
 const axios = require("axios");
 const cheerio = require("cheerio");
 
-const getArticleContent = async (req, res, next) => {
+const extractArticleMiddleware = async (req, res, next) => {
   const url = req.body.url;
   try {
     console.log("Loading article content...");
@@ -10,10 +10,10 @@ const getArticleContent = async (req, res, next) => {
     const $ = cheerio.load(html);
     const articleContent = $("article").text();
 
-    // req.articleContent = articleContent;
+    req.articleContent = articleContent;
+    console.log("req.articleContent", req.articleContent);
 
-    // let result = str.replace(/\{.*?\}/g, "").replace(/\(.*?\)/g, "");
-    console.log("result", html);
+    return res.status(200).json({ articleContent });
     // next();
     return;
   } catch (error) {
@@ -21,4 +21,4 @@ const getArticleContent = async (req, res, next) => {
   }
 };
 
-module.exports = getArticleContent;
+module.exports = extractArticleMiddleware;
