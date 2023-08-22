@@ -2,13 +2,13 @@ require("dotenv").config();
 const axios = require("axios");
 const yahooFinance2 = require("yahoo-finance2").default;
 
-const feed = {
+const mockFeed = {
   items: "50",
   sentiment_score_definition:
     "x <= -0.35: Bearish; -0.35 < x <= -0.15: Somewhat-Bearish; -0.15 < x < 0.15: Neutral; 0.15 <= x < 0.35: Somewhat_Bullish; x >= 0.35: Bullish",
   relevance_score_definition:
     "0 < x <= 1, with a higher score indicating higher relevance.",
-  feed: [
+  mockFeed: [
     {
       title: "Verizon makes progress on Maui network restoration",
       url: "https://www.globenewswire.com/news-release/2023/08/12/2724010/0/en/Verizon-makes-progress-on-Maui-network-restoration.html",
@@ -896,7 +896,7 @@ class GoogleFinanceController {
     let quote = {};
 
     const apiUrl = `https://www.alphavantage.co/query?function=NEWS_SENTIMENT&sort=LATEST&tickers=${symbol}&apikey=${API_KEY}}`;
-    return res.status(200).json({ feed: feed.feed, quote: quote });
+    return res.status(200).json({ feed: mockFeed.mockFeed, quote: quote });
 
     // axios
     //   .get(apiUrl)
