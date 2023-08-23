@@ -10,6 +10,7 @@ const YahooFinanceController = require("./controllers/YahooFinanceController");
 const GoogleFinanceController = require("./controllers/GoogleFinanceController");
 const Yahoo2FinanceController = require("./controllers/YahooFinance2Controller");
 const dateValidatorMiddleware = require("./middlewares/dateFormatMiddleware");
+const { InitDB } = require("./models/init.js");
 
 const app = express();
 app.use(
@@ -18,6 +19,8 @@ app.use(
     credentials: true,
   })
 );
+
+InitDB();
 
 app.use(express.json());
 app.use(express.static("public"));
