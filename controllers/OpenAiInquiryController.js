@@ -4,22 +4,23 @@ const { Configuration, OpenAIApi } = require("openai");
 
 class OpenAiInquiryController {
   static async SummarizeOpenAi(req, res) {
-    console.log(req.body);
+    console.log("Req", req.body.content);
 
-    console.log("Summarizing article content...");
+    // console.log("Summarizing article content...");
 
     const configuration = new Configuration({
       apiKey: process.env.OPENAI_API_KEY,
     });
     try {
       const openai = new OpenAIApi(configuration);
+      console.log("Summarizing article content...");
 
       const response = await openai.createChatCompletion({
         model: "gpt-4",
         messages: [
           {
             role: "user",
-            content: "summarize to 8th reader level: " + req.body,
+            content: "summarize to 8th reader level: " + req.body.content,
           },
         ],
       });

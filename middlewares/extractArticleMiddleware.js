@@ -17,7 +17,7 @@ const extractArticleMiddleware = async (req, res, next) => {
     }
 
     articleContent = articleContent.replace(/\s+/g, " ").trim();
-    console.log("articleContent", articleContent);
+    // console.log("articleContent", articleContent);
 
     return res.status(200).json({ articleContent });
     // next();

@@ -11,8 +11,10 @@ const GoogleFinanceController = require("./controllers/GoogleFinanceController")
 const Yahoo2FinanceController = require("./controllers/YahooFinance2Controller");
 const dateValidatorMiddleware = require("./middlewares/dateFormatMiddleware");
 const { InitDB } = require("./models/init.js");
+const bodyParser = require("body-parser");
 
 const app = express();
+app.use(bodyParser.json());
 app.use(
   cors({
     origin: "http://localhost:3000",
@@ -25,11 +27,7 @@ InitDB();
 app.use(express.json());
 app.use(express.static("public"));
 
-app.post(
-  "/extract",
-  extractArticleMiddleware,
-  OpenAiExtractController.ExtractOpenAi
-);
+app.post("/extract", extractArticleMiddleware);
 
 app.get("/stock-news/:symbol", GoogleFinanceController.getNews);
 app.post("/summarize", OpenAiInquiryController.SummarizeOpenAi);
