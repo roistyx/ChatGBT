@@ -38,6 +38,11 @@ app.post(
   YahooFinanceController.HistoricalData
 );
 app.get("/quote/:symbol", Yahoo2FinanceController.getQuote);
+app.post("/save-article", (req, res) => {
+  console.log("Saving article...");
+  console.log(req.body);
+  res.status(200).json({ message: "Article saved!" });
+});
 
 // app.use(OpenAiPromptController.PromptLine);
 
