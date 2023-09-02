@@ -8,11 +8,11 @@ module.exports = class StockDao {
     if (!connection) return;
 
     try {
-      newsCollection = await connection.collection("users");
-      console.log("Connected to MongoDB users");
+      newsCollection = await connection.collection("news");
+      console.log("Connected to MongoDB Stocks collection");
     } catch (err) {
       console.log(
-        `Unable to establish a collection handle in usersDAO: ${err}`
+        `Unable to establish a collection handle in StocksNewsDAO: ${err}`
       );
     }
   }
@@ -34,12 +34,13 @@ module.exports = class StockDao {
     return;
   }
 
-  static async createUser(userData) {
-    userData.created_at = new Date();
-    userData.login_attempts = 0;
+  static async createNewsEntry(newsData) {
+    console.log("saveStockNews", newsData);
+    // userData.created_at = new Date();
+    // userData.login_attempts = 0;
 
     // if (await this.getUserByUsername(userData.username)) return {};
-    return await newsCollection.insertOne({ ...userData });
+    return await newsCollection.insertOne({ ...newsData });
   }
 
   static async adminInit() {

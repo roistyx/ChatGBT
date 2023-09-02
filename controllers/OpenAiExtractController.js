@@ -1,5 +1,3 @@
-// Purpose: OpenAiInquiryController handles all requests that are related to OpenAiInquiry.
-
 const { Configuration, OpenAIApi } = require("openai");
 
 class OpenAiExtractController {
@@ -28,7 +26,7 @@ class OpenAiExtractController {
         messages: [
           {
             role: "user",
-            content: `Summarize text related to "Consumer Spending Slows, Putting The Rest Of Year At Risk For Retailers" for an 8th grader level ${req.articleContent}`,
+            content: `Summarize to an 8th grader level ${req.articleContent}`,
           },
         ],
       });

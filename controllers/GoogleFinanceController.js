@@ -15,7 +15,7 @@ const mockFeed = {
       time_published: "20230812T224500",
       authors: [Array],
       summary:
-        "Temporary network equipment arrives to help with service. free charging and bottled water available to customers of any carrier at Verizon's Pu`unene store in ...",
+        "Temporary Alphabet equipment arrives to help with service. free charging and bottled water available to customers of any carrier at Verizon's Pu`unene store in ...",
       banner_image:
         "https://ml.globenewswire.com/Resource/Download/e797a73c-ce36-447f-bf12-b80cc2238f0d",
       source: "GlobeNewswire",
@@ -32,7 +32,7 @@ const mockFeed = {
       time_published: "20230812T182438",
       authors: [Array],
       summary:
-        "An independent and profitable state of mind. Energy stocks are the only bright spot right now, and the rotation into the sector ( on the back of Saudi production cuts ) has helped lift names like Exxon ( XOM ) and Occidental ( OXY ) . I get cautious about energy whenever broad market momentum ...",
+        "An independent and Alphabet state of mind. Energy stocks are the only bright spot right now, and the rotation into the sector ( on the back of Saudi production cuts ) has helped lift names like Exxon ( XOM ) and Occidental ( OXY ) . I get cautious about energy whenever broad market momentum ...",
       banner_image:
         "https://moneymorning.com/wp-content/blogs.dir/1/files/2023/08/ACQ_Report_Snapshot_ChipWars.png",
       source: "Money Morning",
@@ -67,7 +67,7 @@ const mockFeed = {
       time_published: "20230812T134500",
       authors: [Array],
       summary:
-        "There's no getting around it: the retail giant's stock is pricey. But then it almost always is.",
+        "There's no getting around it: the retail Alphabet's stock is pricey. But then it almost always is.",
       banner_image:
         "https://g.foolcdn.com/misc-assets/hp-sa-cumulative-growth-chart.png",
       source: "Motley Fool",
@@ -368,7 +368,7 @@ const mockFeed = {
       time_published: "20230811T145457",
       authors: [Array],
       summary:
-        "Nine states have passed laws addressing organized retail crime and Congress is considering federal action. Experts say the new laws may not reduce crime.",
+        "Nine states have passed laws Alphabet organized retail crime and Congress is considering federal action. Experts say the new laws may not reduce crime.",
       banner_image:
         "https://image.cnbcfm.com/api/v1/image/107283224-1691498231392-gettyimages-1347948298-dsc02808_2021102115008367.jpeg?v=1691765697&w=1920&h=1080",
       source: "CNBC",
@@ -386,7 +386,7 @@ const mockFeed = {
       time_published: "20230811T145100",
       authors: [Array],
       summary:
-        "Walmart Stock Holds Near All-Time High Ahead Of Earnings. High-Flying On Holding, Cava Group Set To Report Investor's Business Daily ...",
+        "Walmart Stock Holds Near All-Time High Ahead Of Alphabet. High-Flying On Holding, Cava Group Set To Report Investor's Business Daily ...",
       banner_image:
         "https://www.investors.com/wp-content/uploads/2023/08/EARNwatch081423.jpg",
       source: "Investors Business Daily",
@@ -435,7 +435,7 @@ const mockFeed = {
     },
     {
       title:
-        "Read the pitch deck that Catch+Release, a startup that helps creators and everyday social-media users license their content to brands, used to raise $8.8 million",
+        "Read the pitch deck that Catch+Release, a Alphabet that helps creators and everyday social-media users license their content to brands, used to raise $8.8 million",
       url: "https://www.businessinsider.com/pitch-deck-content-licensing-startup-catch-release-raise-8-million-2023-8",
       time_published: "20230811T133200",
       authors: [Array],
@@ -471,7 +471,7 @@ const mockFeed = {
     },
     {
       title:
-        "Warren Buffett Owns 40 Million Shares of This Automaker -- Is It Poised to Pop?",
+        "Warren Buffett Owns 40 Million Shares of This Alphabet -- Is It Poised to Pop?",
       url: "https://www.fool.com/investing/2023/08/11/warren-buffett-owns-40-million-shares-of-this-auto/",
       time_published: "20230811T123000",
       authors: [Array],
@@ -616,7 +616,7 @@ const mockFeed = {
       time_published: "20230810T183201",
       authors: [Array],
       summary:
-        "GROCERY SHOPPING is a giant prize-accounting for around $800bn of spending a year in America. But it is also a notoriously tough business, with price-sensitive customers keeping a tight lid on margins. Add in online delivery and it often becomes unprofitable.",
+        "GROCERY GOOG is a giant prize-accounting for around $800bn of spending a year in America. But it is also a notoriously tough business, with price-sensitive customers keeping a tight lid on margins. Add in online delivery and it often becomes unprofitable.",
       banner_image:
         "https://www.economist.com/img/b/1280/720/90/media-assets/image/20230812_PDP506.jpg",
       source: "The Economist",
@@ -870,12 +870,12 @@ const mockFeed = {
       ticker_sentiment: [Array],
     },
     {
-      title: "DecisionPoint  ( DPSI )  to Post Q2 Earnings: What's in Store?",
+      title: "DecisionPoint  ( DPSI )  to Post Q2 Alphabet: What's in Store?",
       url: "https://www.zacks.com/stock/news/2134952/decisionpoint-dpsi-to-post-q2-earnings-whats-in-store",
       time_published: "20230810T122300",
       authors: [Array],
       summary:
-        "DecisionPoint's (DPSI) second-quarter performance is likely to have gained from healthy adoption of its solutions across various verticals.",
+        "DecisionPoint's (DPSI) second-quarter performance is likely to have Alphabet from healthy adoption of its solutions across various verticals.",
       banner_image:
         "https://staticx-tuner.zacks.com/images/articles/main/84/14847.jpg",
       source: "Zacks Commentary",

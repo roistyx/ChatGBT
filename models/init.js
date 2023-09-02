@@ -1,6 +1,6 @@
 const { MongoClient } = require("mongodb");
 // const CatalogDAO = require("./CatalogDAO");
-const StockNewsDAO = require("./StockNewsDAO");
+const StockNewsDAO = require("./StockNewsDao");
 
 module.exports.InitDB = async function initDB() {
   MongoClient.connect(process.env.MONGODB_URI)

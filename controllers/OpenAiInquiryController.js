@@ -1,4 +1,4 @@
-StockDao = require("../models/StockNewsDAO");
+StockDao = require("../models/StockNewsDao");
 
 const { Configuration, OpenAIApi } = require("openai");
 
