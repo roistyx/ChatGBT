@@ -8,7 +8,7 @@ const OpenAiExtractController = require("./controllers/OpenAiExtractController")
 const path = require("path");
 const YahooFinanceController = require("./controllers/YahooFinanceController");
 const GoogleFinanceController = require("./controllers/GoogleFinanceController");
-const Yahoo2FinanceController = require("./controllers/YahooFinance2Controller");
+const GetQuotesController = require("./controllers/GetQuotesController");
 const StocksController = require("./controllers/StocksController");
 const dateValidatorMiddleware = require("./middlewares/dateFormatMiddleware");
 const { InitDB } = require("./models/init.js");
@@ -38,7 +38,7 @@ app.post(
   dateValidatorMiddleware,
   YahooFinanceController.HistoricalData
 );
-app.get("/quote/:symbol", Yahoo2FinanceController.getQuote);
+app.get("/quote/:symbol", GetQuotesController.getStockData);
 app.post("/save-article", StocksController.saveStockNews);
 
 // app.use(OpenAiPromptController.PromptLine);
