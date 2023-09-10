@@ -1,6 +1,6 @@
 require("dotenv").config();
 const axios = require("axios");
-const yahooFinance2 = require("yahoo-finance2").default;
+const cheerio = require("cheerio");
 
 const mockFeed = {
   items: "50",
@@ -894,6 +894,37 @@ class GoogleFinanceController {
     const symbol = req.params.symbol;
     const API_KEY = process.env.GOOGLE_API_KEY;
     let quote = {};
+
+    async function getStockPrice(symbol) {
+      try {
+        const url = `https://www.google.com/finance/quote/${symbol}`;
+        const response = await axios.get(url);
+        const $ = cheerio.load(response.data);
+
+        // The exact selector depends on the current structure of the Google Finance page.
+        // As of my last update in September 2021, this is a guessed selector.
+        // Please inspect the webpage to find the accurate selector if it doesn't work.
+        const price = $(
+          "div[data-source='Google Finance'] .YMlKec.fxKbKc"
+        ).text();
+
+        if (price) {
+          return price;
+        } else {
+          throw new Error(
+            "Unable to fetch stock price. Selector may have changed."
+          );
+        }
+      } catch (error) {
+        console.error("Error fetching stock price:", error);
+        return null;
+      }
+    }
+
+    // Example usage:
+    getStockPrice("AAPL:NASDAQ").then((price) => {
+      console.log("AAPL Stock Price:", price);
+    });
 
     const apiUrl = `https://www.alphavantage.co/query?function=NEWS_SENTIMENT&sort=LATEST&tickers=${symbol}&apikey=${API_KEY}}`;
     return res.status(200).json({ feed: mockFeed.mockFeed, quote: quote });
